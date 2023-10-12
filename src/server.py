@@ -9,6 +9,9 @@ CORS(app)
 def random_chord_progression():
     
     # get predictions from model
-    predictions = ["A", "B", "C", "D"]
+    predictions = ["Amaj7", "B", "C", "D"]
+
+    print('Random Chord Progression Requested!')
+    print(f'Returning Predictions: {predictions}')
 
     return jsonify({"chord_progression": predictions})

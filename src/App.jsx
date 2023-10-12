@@ -1,21 +1,24 @@
 import { useState } from 'react'
 import './App.css'
-import UserInput from './components/UserInput'
-import ModelOutput from './components/ModelOutput'
 import axios from 'axios'
 
+// Components
+import Download from './components/Download'
+import UserInput from './components/UserInput'
+import ModelOutput from './components/ModelOutput'
+
 function App() {
+
+  const serverUrl = 'http://127.0.0.1:5000'
+  const randomEndPoint = '/random'
   
-  // userChords will be set in the UserInput component
   const [userChords, setUserChords] = useState([])
   const [modelChords, setModelChords] = useState([])
 
-  function handleGenerate() {
-
+  function getChords() {
     // make API call to get new chords
-    axios.get('http://127.0.0.1:5000/random')
+    axios.get(serverUrl + randomEndPoint)
       .then(response => {
-        console.log(response.data)
         setModelChords(response.data.chord_progression)
       })
       .catch(error => {
@@ -31,13 +34,17 @@ function App() {
           userChords={userChords}
           setUserChords={setUserChords}
         /> */}
-        <button onClick={handleGenerate}>Generate</button>
+        <button onClick={getChords}>Generate</button>
         <ModelOutput 
           modelChords={modelChords}
           setModelChords={setModelChords}
         />
       </div>
-      
+      <div className="card">
+        <Download 
+          modelChords={modelChords}
+        />
+      </div>
     </>
   )
 }
