@@ -9,7 +9,7 @@ CORS(app)
 def random_chord_progression():
     
     # get predictions from model
-    predictions = ["Amaj7", "B", "C", "D"]
+    predictions = ["Am7", "G", "C", "Fmaj7"]
 
     print('Random Chord Progression Requested!')
     print(f'Returning Predictions: {predictions}')
