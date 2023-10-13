@@ -8,7 +8,7 @@ export default function ModelOutput(props) {
 
     return (
         <>
-            <h2>Random Chord Progression</h2>
+            <h2>AI Generated Chord Progression</h2>
             <div className="chord-container">
                 {chordsElement}
             </div>

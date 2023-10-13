@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './App.css'
 import axios from 'axios'
 
 // Components
@@ -30,15 +29,11 @@ function App() {
     <>
       <h1>AI Chord Generator</h1>
       <div className="card">
-        {/* <UserInput 
-          userChords={userChords}
-          setUserChords={setUserChords}
-        /> */}
-        <button onClick={getChords}>Generate</button>
         <ModelOutput 
           modelChords={modelChords}
           setModelChords={setModelChords}
         />
+        <button onClick={getChords}>Generate</button>
       </div>
       <div className="card">
         <Download 

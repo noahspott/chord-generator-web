@@ -59,7 +59,7 @@ export default function Download(props) {
     
     return(
         <div>
-            <button onClick={onDownloadClick}>Download MIDI</button>
+            <button className="button-hollow" onClick={onDownloadClick}>Download MIDI</button>
         </div>
     )
 }
